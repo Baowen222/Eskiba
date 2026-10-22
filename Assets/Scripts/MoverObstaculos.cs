@@ -7,10 +7,10 @@ public class MoverObstaculo : MonoBehaviour
 
     void Update()
     {
-        // El obstaculo baja constantemente
+        // Movemos el obstaculo hacia abajo
         transform.position += Vector3.down * velocidad * Time.deltaTime;
 
-        // Si sale por debajo de la pantalla se elimina
+        // Eliminamos el obstaculo cuando sale de la pantalla
         float limiteInferior = -Camera.main.orthographicSize - 1f;
 
         if (transform.position.y < limiteInferior)

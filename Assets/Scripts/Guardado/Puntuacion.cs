@@ -34,4 +34,16 @@ public class Puntuacion : MonoBehaviour
             textoRecord.text = "Record: " + record;
         }
     }
+
+
+    public int ObtenerPuntos()
+    {
+        return Mathf.FloorToInt(puntos);
+    }
+
+    public int ObtenerRecord()
+    {
+        return record;
+    }
+
 }
