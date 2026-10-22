@@ -1,0 +1,38 @@
+{
+  "unity": "6000.3.23f1",
+  "orientacion": "Portrait",
+  "escenas": [
+    {
+      "path": "Assets/Escenas/Menu.unity",
+      "enabled": true
+    },
+    {
+      "path": "Assets/Escenas/Juego.unity",
+      "enabled": true
+    }
+  ],
+  "androidDisponible": false,
+  "recordRestaurado": 0,
+  "resultados": [
+    {
+      "escena": "Juego",
+      "scriptsAusentes": 0,
+      "botones": 6,
+      "botonesSinAccion": [],
+      "sistemasEventos": 1,
+      "referencia": "(1080.00, 1920.00)",
+      "escalado": "ScaleWithScreenSize",
+      "zonaSegura": true
+    },
+    {
+      "escena": "Menu",
+      "scriptsAusentes": 0,
+      "botones": 2,
+      "botonesSinAccion": [],
+      "sistemasEventos": 1,
+      "referencia": "(1080.00, 1920.00)",
+      "escalado": "ScaleWithScreenSize",
+      "zonaSegura": true
+    }
+  ]
+}

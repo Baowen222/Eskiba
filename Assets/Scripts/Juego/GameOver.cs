@@ -13,14 +13,19 @@ public class GameOver : MonoBehaviour
     public GameObject textoRecord;
     public void TerminarPartida()
     {
-        textoPuntosFinales.text = "Puntuación: " + puntuacion.ObtenerPuntos();
-        textoRecordFinal.text = "Récord: " + puntuacion.ObtenerRecord();
+        textoPuntosFinales.text = "PUNTUACIÃ“N\n<size=100>" + puntuacion.ObtenerPuntos().ToString("000") + "</size>";
+        textoRecordFinal.text = "RÃ‰CORD PERSONAL   " + puntuacion.ObtenerRecord().ToString("000");
 
         textoPuntuacion.SetActive(false);
         textoRecord.SetActive(false);
 
         panelGameOver.SetActive(true);
         Time.timeScale = 0f;
+    }
+
+    public void VolverAlMenu()
+    {
+        NavegacionEscenas.VolverAlMenu();
     }
 
     public void Reiniciar()

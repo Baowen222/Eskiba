@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class MoverJugador : MonoBehaviour
 {
@@ -8,6 +9,11 @@ public class MoverJugador : MonoBehaviour
     {
 
         if (Time.timeScale == 0f)
+        {
+            return;
+        }
+        // Pulsar un botón de la interfaz no debe desplazar al jugador.
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
         {
             return;
         }
@@ -34,7 +40,7 @@ public class MoverJugador : MonoBehaviour
             new Vector3(posicionPantalla.x, posicionPantalla.y, distancia)
         );
 
-        // Calcular tama�o de pantalla
+        // Calcular tamaño de pantalla
         float alto = Camera.main.orthographicSize;
         float ancho = alto * Camera.main.aspect;
 

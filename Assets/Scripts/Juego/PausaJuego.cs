@@ -25,7 +25,7 @@ public class PausaJuego : MonoBehaviour
         }
     }
 
-    void Pausar()
+    public void Pausar()
     {
         // No abrimos la pausa si ya ha  perdido
         if (panelGameOver.activeSelf || pausado)
@@ -49,5 +49,10 @@ public class PausaJuego : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void VolverAlMenu()
+    {
+        NavegacionEscenas.VolverAlMenu();
     }
 }

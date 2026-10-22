@@ -17,7 +17,7 @@ public class Puntuacion : MonoBehaviour
         guardado = new GuardadoLocal();
         record = guardado.CargarRecord();
 
-        textoRecord.text = "Record: " + record;
+        textoRecord.text = "RÉCORD\n<size=44>" + record.ToString("000") + "</size>";
     }
 
     void Update()
@@ -25,13 +25,13 @@ public class Puntuacion : MonoBehaviour
         puntos += Time.deltaTime;
 
         int puntuacionActual = Mathf.FloorToInt(puntos);
-        textoPuntuacion.text = "Score: " + puntuacionActual;
+        textoPuntuacion.text = "PUNTOS\n<size=64>" + puntuacionActual.ToString("000") + "</size>";
 
         if (puntuacionActual > record)
         {
             record = puntuacionActual;
             guardado.GuardarRecord(record);
-            textoRecord.text = "Record: " + record;
+            textoRecord.text = "RÉCORD\n<size=44>" + record.ToString("000") + "</size>";
         }
     }
 
