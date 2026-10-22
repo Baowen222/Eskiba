@@ -8,6 +8,8 @@ public class GenerarObstaculos : MonoBehaviour
     public float tiempoEntreObstaculos = 1.2f;
     public float velocidadInicial = 4f;
 
+    FabricaObstaculos fabrica = new FabricaObstaculos();
+
     float tiempo = 0f;
     float tiempoJugado = 0f;
 
@@ -40,14 +42,13 @@ public class GenerarObstaculos : MonoBehaviour
             float x = Random.Range(-ancho + 0.4f, ancho - 0.4f);
             Vector3 posicion = new Vector3(x, alto + 1f, 0);
 
-            GameObject nuevo = Instantiate(obstaculo, posicion, Quaternion.identity);
-
-            MoverObstaculo movimiento = nuevo.GetComponent<MoverObstaculo>();
-
-            movimiento.velocidad = Mathf.Min(
+            float velocidad = Mathf.Min(
                 8f,
                 velocidadInicial + tiempoJugado * 0.05f
             );
+
+            // La fabrica crea el obstaculo con la velocidad calculada.
+            fabrica.CrearObstaculo(obstaculo, posicion, velocidad);
         }
     }
 }
